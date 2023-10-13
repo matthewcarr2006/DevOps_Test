@@ -1,0 +1,215 @@
+# ways of storing data
+# lists - ordered/indexed - mutable (can be changed) (rwd), collection of values [a, b, c, ...]
+# dictionaries - unordered - key pair values - no indexing, mutable, collection of key pair values {"key1": "value1"}
+# sets - unordered, mutable, collection of unique values {value1, value2}
+# tuples - ordered/indexed, immutable (value1, value2, ...)
+
+# lists are stored in a variable
+"""
+colours = ["blue", "red", "green", "yellow"]
+#print(colours)
+"""
+
+# referencing elements in a list is by their index postion
+"""
+print(colours[-1])
+print(colours[3])
+print(colours[2])
+print(colours[-2])
+"""
+
+# slicing - create a sub-list up to but not including the 2nd number in the range
+"""
+print(colours[0:2])
+print(colours[2:]) # no 2nd number slices to the end of the list
+print(colours[:2]) # no start number slices from the one before the number
+"""
+# altering lists - use index position, need a value, delete with del
+"""
+food = ["bread", "cheese", "pasta", "apple"]
+
+print(food)
+food[0] = "rice"
+print(food)
+del food[1]
+print(food)
+"""
+
+# checking if item is in a list
+"""
+print("pasta" in food)
+print("orange" in food) 
+"""
+
+# nested list
+"""
+numbers = [1, 2, 3, 4]
+letters = ["a", "b", "c", "d"]
+
+combined = [numbers, letters]
+
+print(combined)
+print(combined[1][3], combined[1][2])
+"""
+
+# multiple data types
+"""
+my_list = ["red", 5, ["green", "apple"], 10.5]
+
+print(my_list)
+print(my_list[2][1])
+print(my_list[0])
+"""
+
+
+# list methods
+
+# append
+"""
+my_fruits = ["apple", "orange", "kiwi"]
+print(my_fruits)
+
+my_fruits.append("banana")
+print(my_fruits)
+"""
+# remove
+"""
+my_fruits.remove("orange")
+print(my_fruits)
+"""
+# insert
+"""
+my_fruits.insert(1,"dragon")
+my_fruits.insert(0,"strawberry")
+print(my_fruits)
+"""
+# extend
+"""
+my_fruits.extend(["grapes", "melon", "mango"])
+print(my_fruits)
+"""
+#index
+"""
+print(my_fruits.index("dragon"))
+"""
+# reverse
+"""
+print(my_fruits.reverse())
+"""
+# sort
+"""
+my_fruits.sort()
+print(my_fruits)
+my_fruits.sort(key=len)
+print(my_fruits)
+"""
+
+# join
+"""
+x = ", ".join(my_fruits)
+print(x) # taking out of being a list and sperates each item by a comma
+print(type(x))
+
+x = "; ".join(my_fruits)
+print(x) # taking out of being a list and sperates each item by a semi-colon
+print(type(x))
+"""
+
+
+# Dictionaries
+# {} key:value pairs
+# similar to a list, but not indexing
+# keys need to be unique, values don't
+"""
+drinks = {"fizzy": "coke", "still": "ribena", "juice":"apple", "alcoholic": "wine"}
+print(drinks)
+print(drinks["still"]) # can only query with the key, not the value.
+"""
+# add to my dictionary
+"""
+drinks["non-alcoholic"] = "water"
+print(drinks)
+"""
+# Overwrite
+"""
+drinks["non-alcoholic"] = "squash"
+print(drinks)
+"""
+# return all values or keys or both
+"""
+print(drinks.values())
+print(drinks.keys())
+print(drinks.items())
+
+print("apple" in drinks.values())
+print("still" in drinks)
+"""
+# get method
+"""
+print(drinks.get("still"))
+print(drinks.get("stille"))
+print(drinks.get("stille","not in the list ... try again"))
+"""
+# update method = extends disctionary
+"""
+drinks.update({"exotic":"pinacolada"})
+print(drinks)
+drinks.update(energy = "red bull")
+print(drinks)
+"""
+
+# pop method
+"""
+print(drinks.pop("non-alcoholic"))
+print(drinks.pop("non-alcoholic", "not found")) # pass in error message otehrwise it will fail if it can't be found
+print(drinks)
+"""
+
+
+
+# exercise
+
+# make a dictionary of books, with 3 authors and multiple books per author
+# Use and input asking for the author Name
+# print back as a string a list of books by that author
+# use the .join() method (think how to deliminate)
+"""
+#books = {"The Lord of the Rings": "Tolkien", "The Hobbit": "Tolkien", "The Silmarillion":"Tolkien", "Catch-22": "Joseph Heller", "Closing Time": "Joseph Heller", "1984": "George Orwell", "Animal Farm": "George Orwell"}
+books = {"Tolkien":["The Lord of the Rings","The Hobbit","The Silmarillion" ], "Joseph Heller": ["Catch-22", "Closing Time"], "George Orwell": ["1984", "Animal Farm"] }
+#print(books)
+
+author_name = input("What author are you looking for?")
+#print(author_name)
+
+#Tolkienauthor_books = books["Tolkien"] 
+#print(author_books)
+
+author_books = ", ".join(books[author_name])
+print(author_books) 
+"""
+
+
+
+#tuples
+# we can't update a tuple but otherwise is the same as a list
+# indicates that we don't want to change the data
+# less memory - very slight
+# speed - a little bit quicker
+# () instead of [] or nothing at all
+
+"""
+shapes = ("square", "circle", "triangle")
+more_shapes = "rectangle", "rombus", "hexagon"
+
+print(shapes)
+print(more_shapes)
+"""
+
+
+# sets
+# no indexing
+# no duplicates values
+"""
+test_set = {'x', 'u', 'q'}
+"""
+

@@ -1,0 +1,155 @@
+# if, elif, else statements (flow control)
+# conditional statemnets are used to accomodate different paths our code can follow.
+
+# if
+"""
+my_bool = True
+
+if my_bool:
+    print(f"Correct! my_bool is {my_bool}")
+else:
+    print(f"Wrong! my_bool is {my_bool}")
+"""
+
+
+# nested if statements
+"""
+if some_condition:
+    if some_other_condition:
+        ...
+    else:
+        ...
+else:
+    ...
+"""
+
+
+
+# conditionals
+
+# equals to: ==
+# not equals to: !=
+# less than: <
+# more than: >
+# less than or equal to: <=
+# more than or equal to: >=
+
+# examples
+"""
+money = 10
+
+if money > 5:
+    print("I have some money")
+else:
+    print("I don't have much money")
+
+
+if money > 5:
+    print("I have more than £5")
+elif money > 4:
+    print("I have less than £5, but less than £5")
+else:
+    print("I need to go to the cashpoint")"
+
+"""
+
+"""
+temp = int(input("What's the temperature?"))
+
+if temp == 36:
+    print("Equalled the record!!!")
+elif temp > 36:
+    print("Record broken")
+elif temp >= 30:
+    print("It's hot! Trunks on.")
+elif temp > 25:
+    print("It's pretty warm.")
+elif temp > 15:
+    print("Need a jumper.")
+elif temp > 0:
+    print("Freezing!")
+else:
+    print("Sun-zero.")    
+"""
+
+
+# ask for an input for a grade/mark
+# if teh mark is > 85 = distinction
+# if mark bewteeen 65 and 85 = pass
+# else fail
+
+#x = int(input("enter a grade: "))
+
+#if x >= 85:
+#    print("distinction")
+#elif x >= 65:
+#    print("pass")
+#else:
+#    print("fail")
+
+
+
+# Multiple compareters - with multiple ocnditions using and/or
+"""
+deposit = 10
+password = "password1"
+
+if 0 < deposit <= 100 and password == "password":
+    print(f"thank you for your deposit of £{deposit}")
+else:
+    print("failed to deposit")
+
+if not (0 < deposit <= 100) or password != "password":
+    print("failed to deposit")
+else:
+    print("thank you for the deposit")
+"""
+
+# in and not in
+"""
+name = "root"
+
+if name in ("root", "admin", "user"):
+    print("invalid username")
+else:
+    print("accepted")
+
+if name not in ("root", "admin"):
+    print("accepted")
+else:
+    print("invalid username")
+"""
+
+
+# challenge
+# weight converter app: convert a user inputted weight(float),
+# and user to select either Kgs or Lbs.
+# write an if statement that checks if the unit is Kgs or Lbs
+# and print the converted value. If Kgs print out in Lbs. 
+# else: to handle the other conversion. 
+# Error handling for upper/lower case input.
+
+"""
+weight_unit = input("Choose unit (lbs/kgs")
+weight = float(input("Enter your weight"))
+lbs_to_kgs = 0.453592
+kgs_to_lbs = 2.20462
+
+
+if weight_unit == "lbs":
+    result = weight * lbs_to_kgs 
+elif weight_unit == "kgs":
+    result = weight * kgs_to_lbs
+else:
+    converted_weight = "Please enter a valid unit."
+
+print(f"Your weight is {weight_unit} {result}")
+"""
+
+
+
+
+
+
+
+
