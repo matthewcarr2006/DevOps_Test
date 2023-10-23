@@ -211,5 +211,3 @@ for name in [input("What is your name? ") for name in range(5)]: print(f"{name} 
 
 
 
-for element in ls:
-

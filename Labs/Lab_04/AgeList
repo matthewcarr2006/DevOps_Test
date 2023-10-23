@@ -1,0 +1,85 @@
+ages = [12,18,33,84,45,67,12,82,95,16,10,23,43,29,40,34,30,16,44,69,70,74,38,65,36,83,50,11,79,64,78,37,3,8,68,22,4,60,33,82,45,23,5,18,28,99,17,81,14,88,50,19,59,7,44,93,35,72,25,63,11,69,11,76,10,60,30,14,21,82,47,6,21,88,46,78,92,48,36,28,51]
+
+# 1.	Record the length of the ages List in a variable (you'll need it later)
+# Display the length.
+# Test your code.
+
+original_ages_len = len(ages)
+print(original_ages_len)
+print("")
+
+
+# 2.	Display these ages one on each line:
+# Tip: Use a for loop to read each number. 
+
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>> Age list begins <<<<<<<<<<<<<<")
+for age in ages:
+    print(age)
+print("<<<<<<<<<<<<<<<<<<<<<<<<<<< Age list ends <<<<<<<<<<<<<<<<")
+print("")
+
+
+# 3.	Add one year to every age!
+# Tip:	 	ages[n] is the nth element of ages. 
+# To increase (say) element 2 you may do ages[2] += 1
+# len(ages) will return the length of the ages List.
+# Redisplay ages to test your code.
+
+for i in range(0, original_ages_len):
+    ages[i] += 1
+
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>> Age+1 list begins <<<<<<<<<<<<<<")
+for age in ages:
+    print(age)
+print("<<<<<<<<<<<<<<<<<<<<<<<<<<< Age+1 list ends <<<<<<<<<<<<<<<<")
+print("")
+
+
+# 4.	Our code only takes into account those people in the age range of 16-65 (inclusively)
+# Please delete all ages which are outside this range.
+# Tip:	There are other ways of achieving this task but one way is to use a for loop that uses the 	len() function to examine each item and then use the del() function to remove an item 	at certain index. 
+# Redisplay ages to test your code.
+
+#for i in range(0, ages_len):
+#    ages[i] 
+#    
+#print(ages)
+for i in range(original_ages_len,0,-1):
+    if ages[i-1] <= 16 or ages[i-1] >= 65:
+        del ages[i-1]
+
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>> Ages 16-65 list begins <<<<<<<<<<<<<<")
+for age in ages:
+    print(age)
+print("<<<<<<<<<<<<<<<<<<<<<<<<<<< Ages 16-65 list ends <<<<<<<<<<<<<<<<")
+print("")
+
+#Or
+#new_ages = [age for age in ages if 16 <= age <=65]
+#for age in new_ages:
+#    print(age)
+
+
+ages_len = len(ages)
+counter = 0
+for i in range(ages_len,0,-1):
+    if ages[i-1] >= 16 and ages[i-1] <= 25:
+        counter += 1
+print(f"There are {counter} 16-25 year olds in the list.")
+print(" ")
+
+
+ages.sort()
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>> Sorted 16-65 list begins <<<<<<<<<<<<<<")
+for age in ages:
+    print(age)
+print("<<<<<<<<<<<<<<<<<<<<<<<<<<< Sorted 16-65 list ends <<<<<<<<<<<<<<<<")
+print("")
+
+
+print(f"Percentage of ages fall between 16-25 = {counter/original_ages_len*100}%")
+print(" ")
+
+
+
+
